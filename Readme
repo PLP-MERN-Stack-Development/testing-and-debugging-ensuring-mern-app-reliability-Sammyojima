@@ -1,0 +1,166 @@
+# MERN Bug Tracker
+
+A full-stack MERN application for tracking software bugs. Users can report, view, update, and delete bugs. The project demonstrates best practices in **testing**, **debugging**, and **error handling**.
+
+---
+
+## **Project Setup**
+
+### **Backend**
+
+1. Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file:
+
+```
+MONGO_URI=your-mongodb-atlas-uri
+```
+
+4. Start the server:
+
+```bash
+npm run dev
+```
+
+The backend runs on **[http://localhost:5000](http://localhost:5000)**.
+
+### **Frontend**
+
+1. Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the frontend:
+
+```bash
+npm start
+```
+
+The frontend runs on **[http://localhost:3000](http://localhost:3000)**.
+
+---
+
+## **Application Features**
+
+* Report new bugs through a form.
+* View a list of all bugs.
+* Update bug statuses (open, in-progress, resolved).
+* Delete bugs.
+
+---
+
+## **Error Handling**
+
+### Backend
+
+* All routes pass errors to a centralized **Express middleware**.
+* Example:
+
+```javascript
+app.use(errorHandler);
+```
+
+* Returns structured JSON error messages.
+
+### Frontend
+
+* React **ErrorBoundary** captures component crashes:
+
+```javascript
+<ErrorBoundary>
+  <App />
+</ErrorBoundary>
+```
+
+* Displays a friendly message while logging errors to the console.
+
+---
+
+## **Testing**
+
+### Backend
+
+* **Unit tests** for helper functions.
+* **Integration tests** for API routes.
+* Tools used: **Jest**, **Supertest**, **mongodb-memory-server**.
+
+```bash
+npm test
+```
+
+### Frontend
+
+* **Unit tests** for React components (form validation, buttons).
+* **Integration tests** for API calls and UI updates.
+* Tools used: **React Testing Library**, **Jest**.
+
+```bash
+npm test
+```
+
+---
+
+## **Debugging**
+
+* **Backend:** Node.js inspector, console logs.
+* **Frontend:** Chrome DevTools, React Developer Tools.
+* Intentional bugs introduced for learning purposes.
+
+---
+
+## **Project Structure**
+
+```
+mern-bug-tracker/
+├─ backend/
+│  ├─ models/
+│  ├─ routes/
+│  ├─ middleware/
+│  ├─ tests/
+│  └─ server.js
+├─ frontend/
+│  ├─ src/
+│  ├─ components/
+│  └─ App.js
+└─ README.md
+```
+
+---
+
+## **Contribution**
+
+* Fork this repository.
+* Implement features or tests.
+* Submit pull requests with proper documentation.
+
+---
+
+## **License**
+
+This project is for educational purposes and does not have a license.
+
+---
+
+## **Notes**
+
+* Ensure MongoDB Atlas URI is correct in `.env`.
+* Start backend before frontend to avoid network errors.
+* All errors are logged to console for debugging while providing friendly messages to users.
